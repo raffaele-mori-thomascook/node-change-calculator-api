@@ -1,0 +1,25 @@
+{
+  "name": "node-change-calculator-api",
+  "version": "0.1.0",
+  "description": "To learn to build a server restful api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raffaele-mori-thomascook/node-change-calculator-api.git"
+  },
+  "keywords": [
+    "restful",
+    "api"
+  ],
+  "author": "Raffaele Mori",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/raffaele-mori-thomascook/node-change-calculator-api/issues"
+  },
+  "dependencies": {
+    "node-change-calculator": "~0.1.0"
+  }
+}

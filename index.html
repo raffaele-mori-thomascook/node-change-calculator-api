@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.min.js"></script>
+		<script type="text/javascript">
+			var myApp = angular.module('myApp',[]);
+			myApp.controller('mainController', function($scope, $http){
+				$scope.cost = 0;
+				$scope.paid = 0;
+
+				$scope.updateValue = function () {
+					var httpData = {
+						url: './?cost='+$scope.cost+'&paid='+$scope.paid,
+						method: 'GET'
+					};
+					
+					$http(httpData)
+						.success(function(data){
+							$scope.result = data.result;
+						})
+						.error(function () {
+							console.log('error: ', arguments);
+						});
+				};
+			});
+		</script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="mainController">
+			<div>
+				Paid: <input type="number" ng-model="paid" ng-change="updateValue()">
+			</div>
+			<div>
+				Cost: <input type="number" ng-model="cost" ng-change="updateValue()">
+			</div>
+			<div>
+				{{paid}}/{{cost}} 
+			</div>
+			<div>
+				{{result}}
+			</div>
+		</div>
+	</body>
+</html>
